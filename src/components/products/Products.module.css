@@ -1,0 +1,116 @@
+.products_container {
+    padding: 0 2rem;
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.products_container>:nth-child(1) {
+    position: absolute;
+    width: 8rem;
+    left: 30%;
+    top: -5rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 25% auto;
+    width: 90%;
+}
+
+.product_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    list-style: none;
+}
+
+.product_menu>li:hover {
+    color: var(--pink);
+    cursor: pointer;
+}
+
+.product_list {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: space-between;
+    height: 25rem;
+    overflow-y: scroll;
+}
+
+.product {
+    width: 12rem;
+    height: 8rem;
+    padding: 1rem;
+    display: flex;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.product>img {
+    top: 3rem;
+    width: 6rem;
+    height: 11rem;
+}
+
+.product_name {
+    display: flex;
+    flex-direction: column;
+}
+
+.product_name>:nth-child(1) {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.product_name>:nth-child(2) {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+/* Media queries */
+@media screen and (max-width: 856px) {
+    .products_container {
+        gap: 1rem;
+    }
+
+    .products_container>:first-child {
+        width: 3.5rem;
+        height: 3.5rem;
+        top: -2.5rem;
+    }
+
+    .products {
+        grid-template-columns: none;
+        gap: 1rem;
+    }
+
+    .product_menu {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .product_menu {
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-left: -2rem;
+        font-size: 1rem;
+    }
+
+    .products_container h1 {
+        text-align: center;
+        font-size: 1.7rem;
+    }
+}
